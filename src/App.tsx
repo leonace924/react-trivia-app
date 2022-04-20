@@ -1,8 +1,7 @@
 import React from 'react';
-import { Loading } from 'components/Common';
 import { AppRoutes } from 'routes';
+import { Loading } from 'components/Common';
 import 'styles/index.css';
-import './App.css';
 
 function App() {
   return (

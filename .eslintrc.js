@@ -13,12 +13,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks'],
   rules: {
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-explicit-any': 'off',
     'react/prop-types': 'off',
     'jsx-a11y/alt-text': 'off',
+    'react-hooks/exhaustive-deps': 'warn',
   },
 };

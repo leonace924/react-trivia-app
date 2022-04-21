@@ -12,7 +12,7 @@ const Quiz = () => {
   const handleNext = useCallback(() => {
     if (!questions) return;
 
-    if (questionId === questions.length - 1) navigate('/404');
+    if (questionId === questions.length - 1) navigate('/results');
     setQuestionId(questionId + 1);
   }, [questions, questionId, navigate]);
 
@@ -25,12 +25,15 @@ const Quiz = () => {
       <Title as="h2" className="text-2xl font-bold text-center text-black lg:text-3xl">
         {questions[questionId].category}
       </Title>
+
       <View className="text-center">
         <QuizCard quiz={questions[questionId]} handleNext={handleNext} />
+
         <Paragraph className="mt-4 text-xl text-black lg:text-2xl lg:mt-6">
           {`${questionId + 1} / ${questions.length}`}
         </Paragraph>
       </View>
+
       <View className="opacity-0">Text</View>
     </View>
   );

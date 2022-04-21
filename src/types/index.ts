@@ -9,5 +9,5 @@ export type QuizDto = {
 
 export type ResultDto = {
   question: string;
-  isCorrect: boolean;
+  answer: boolean;
 };

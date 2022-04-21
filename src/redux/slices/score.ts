@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { ResultDto } from 'types';
 
-type ResultState = {
+type ScoreState = {
   results: ResultDto[];
 };
 
-export const initialState: ResultState = {
+export const initialState: ScoreState = {
   results: [],
 };
 
-const resultSlice = createSlice({
+const scoreSlice = createSlice({
   name: 'sheet',
   initialState,
   reducers: {
@@ -19,6 +19,6 @@ const resultSlice = createSlice({
   },
 });
 
-export const { add } = resultSlice.actions;
+export const { add } = scoreSlice.actions;
 
-export default resultSlice.reducer;
+export default scoreSlice.reducer;

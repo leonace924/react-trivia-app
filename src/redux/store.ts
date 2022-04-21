@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { apiSlice } from './slices/api';
-import resultSlice from 'redux/slices/result';
+import scoreSlice from 'redux/slices/score';
 
 export const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
-    result: resultSlice,
+    score: scoreSlice,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),
 });

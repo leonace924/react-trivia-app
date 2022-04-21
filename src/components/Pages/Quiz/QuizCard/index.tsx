@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
+// import { useAppSelector, useAppDispatch } from 'redux/hooks';
+import { addResult } from 'redux/slices/score';
 import { Redactor, View, Paragraph } from 'components/Common';
 import { Button, RadioButton } from 'components/Form';
 import { QuizDto } from 'types';
@@ -12,20 +14,27 @@ type QuizCardProps = {
 export const QuizCard = ({ quiz, handleAnswer }: QuizCardProps) => {
   const { question, correct_answer } = quiz;
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log(data);
-  };
+  const onSubmit = useCallback(
+    (data: any) => {
+      console.log(data);
+      handleAnswer();
+      reset();
+      addResult('test');
+    },
+    [handleAnswer, reset],
+  );
   console.log(correct_answer);
 
   return (
     <View className="px-8 py-12 border border-black">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Redactor className="mb-6 text-2xl text-center text-black lg:text-3xl">
+        <Redactor className="mb-6 text-2xl text-center text-black break-words lg:text-3xl">
           {question ?? ''}
         </Redactor>
 
@@ -35,6 +44,7 @@ export const QuizCard = ({ quiz, handleAnswer }: QuizCardProps) => {
             label="True"
             register={register}
             name="answer"
+            value="True"
             errors={{ errors }}
             validation={{ required: true }}
           />
@@ -43,6 +53,7 @@ export const QuizCard = ({ quiz, handleAnswer }: QuizCardProps) => {
             label="False"
             register={register}
             name="answer"
+            value="False"
             errors={{ errors }}
             validation={{ required: true }}
           />
@@ -54,9 +65,7 @@ export const QuizCard = ({ quiz, handleAnswer }: QuizCardProps) => {
           </Paragraph>
         )}
 
-        <Button className="px-6 py-1 border border-black" onClick={handleAnswer}>
-          Next
-        </Button>
+        <Button className="px-6 py-1 border border-black">Next</Button>
       </form>
     </View>
   );

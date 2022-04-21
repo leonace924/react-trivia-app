@@ -13,12 +13,12 @@ const scoreSlice = createSlice({
   name: 'sheet',
   initialState,
   reducers: {
-    add(state, action) {
+    addResult(state, action) {
       state.results = [...state.results, action.payload];
     },
   },
 });
 
-export const { add } = scoreSlice.actions;
+export const { addResult } = scoreSlice.actions;
 
 export default scoreSlice.reducer;

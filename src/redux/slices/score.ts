@@ -10,7 +10,7 @@ export const initialState: ScoreState = {
 };
 
 const scoreSlice = createSlice({
-  name: 'sheet',
+  name: 'score',
   initialState,
   reducers: {
     addResult(state, action) {

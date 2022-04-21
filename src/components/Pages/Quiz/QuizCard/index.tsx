@@ -1,18 +1,19 @@
 import React, { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
-// import { useAppSelector, useAppDispatch } from 'redux/hooks';
-import { addResult } from 'redux/slices/score';
 import { Redactor, View, Paragraph } from 'components/Common';
 import { Button, RadioButton } from 'components/Form';
 import { QuizDto } from 'types';
+import { useScore } from 'hooks/useScore';
 
 type QuizCardProps = {
   quiz: QuizDto;
-  handleAnswer: () => void;
+  handleNext: () => void;
 };
 
-export const QuizCard = ({ quiz, handleAnswer }: QuizCardProps) => {
+export const QuizCard = ({ quiz, handleNext }: QuizCardProps) => {
   const { question, correct_answer } = quiz;
+  const [, addScore] = useScore();
+
   const {
     reset,
     register,
@@ -22,14 +23,12 @@ export const QuizCard = ({ quiz, handleAnswer }: QuizCardProps) => {
 
   const onSubmit = useCallback(
     (data: any) => {
-      console.log(data);
-      handleAnswer();
+      addScore({ question: question, answer: correct_answer === data.answer });
+      handleNext();
       reset();
-      addResult('test');
     },
-    [handleAnswer, reset],
+    [correct_answer, handleNext, question, reset, addScore],
   );
-  console.log(correct_answer);
 
   return (
     <View className="px-8 py-12 border border-black">

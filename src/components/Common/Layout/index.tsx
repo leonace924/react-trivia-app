@@ -8,7 +8,7 @@ type LayoutProps = {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <main className="flex flex-col flex-1 h-full min-h-screen px-4 py-6 bg-gray lg:px-8 lg:py-10">
+      <main className="flex flex-col flex-1 h-full min-h-screen px-6 py-8 bg-gray lg:px-12 lg:py-14">
         {children}
       </main>
 

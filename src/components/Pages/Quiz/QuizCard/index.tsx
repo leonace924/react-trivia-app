@@ -1,14 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Redactor, View } from 'components/Common';
+import { Redactor, View, Paragraph } from 'components/Common';
 import { Button, RadioButton } from 'components/Form';
 import { QuizDto } from 'types';
 
 type QuizCardProps = {
   quiz: QuizDto;
+  handleAnswer: () => void;
 };
 
-export const QuizCard = ({ quiz }: QuizCardProps) => {
+export const QuizCard = ({ quiz, handleAnswer }: QuizCardProps) => {
   const { question, correct_answer } = quiz;
   const {
     register,
@@ -28,7 +29,7 @@ export const QuizCard = ({ quiz }: QuizCardProps) => {
           {question ?? ''}
         </Redactor>
 
-        <View className="flex items-center justify-around mb-6">
+        <View className="flex items-center justify-around mb-4">
           <RadioButton
             id="answer-true"
             label="True"
@@ -47,9 +48,15 @@ export const QuizCard = ({ quiz }: QuizCardProps) => {
           />
         </View>
 
-        {errors.answer && <div className="form_error">We should select one of the questions</div>}
+        {errors.answer && (
+          <Paragraph className="mb-6 text-sm text-rose-600">
+            We should select one of the questions
+          </Paragraph>
+        )}
 
-        <Button className="px-6 py-1 border border-black">Next</Button>
+        <Button className="px-6 py-1 border border-black" onClick={handleAnswer}>
+          Next
+        </Button>
       </form>
     </View>
   );

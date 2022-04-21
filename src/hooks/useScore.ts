@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import { useAppSelector, useAppDispatch } from 'redux/hooks';
-import { addResult } from 'redux/slices/score';
+import { addResult, resetResult } from 'redux/slices/score';
 import { ResultDto } from 'types';
 
-export const useScore = (): [ResultDto[], (value: ResultDto) => void] => {
+export const useScore = (): [ResultDto[], (value: ResultDto) => void, () => void] => {
   const dispatch = useAppDispatch();
   const score = useAppSelector((state) => state.score.results);
 
@@ -14,5 +14,9 @@ export const useScore = (): [ResultDto[], (value: ResultDto) => void] => {
     [dispatch],
   );
 
-  return [score, addScore];
+  const resetScore = useCallback(() => {
+    dispatch(resetResult());
+  }, [dispatch]);
+
+  return [score, addScore, resetScore];
 };

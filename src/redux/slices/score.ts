@@ -13,12 +13,13 @@ const scoreSlice = createSlice({
   name: 'score',
   initialState,
   reducers: {
-    addResult(state, action) {
+    addResult: (state, action) => {
       state.results = [...state.results, action.payload];
     },
+    resetResult: () => initialState,
   },
 });
 
-export const { addResult } = scoreSlice.actions;
+export const { addResult, resetResult } = scoreSlice.actions;
 
 export default scoreSlice.reducer;

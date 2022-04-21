@@ -26,7 +26,7 @@ const Quiz = () => {
         {questions[questionId].category}
       </Title>
 
-      <View className="text-center">
+      <View className="max-w-3xl mx-auto text-center">
         <QuizCard quiz={questions[questionId]} handleNext={handleNext} />
 
         <Paragraph className="mt-4 text-xl text-black lg:text-2xl lg:mt-6">

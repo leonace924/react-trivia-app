@@ -33,11 +33,11 @@ export const QuizCard = ({ quiz, handleNext }: QuizCardProps) => {
   return (
     <View className="px-8 py-12 border border-black">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Redactor className="mb-8 text-2xl text-center text-black break-words lg:text-3xl">
+        <Redactor className="mb-8 text-2xl text-center text-black break-words lg:text-3xl lg:mb-14">
           {question ?? ''}
         </Redactor>
 
-        <View className="flex items-center justify-around mb-4">
+        <View className="flex items-center justify-around mb-4 lg:mb-8">
           <RadioButton
             id="answer-true"
             label="True"

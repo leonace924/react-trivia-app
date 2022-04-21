@@ -33,7 +33,7 @@ export const QuizCard = ({ quiz, handleNext }: QuizCardProps) => {
   return (
     <View className="px-8 py-12 border border-black">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Redactor className="mb-6 text-2xl text-center text-black break-words lg:text-3xl">
+        <Redactor className="mb-8 text-2xl text-center text-black break-words lg:text-3xl">
           {question ?? ''}
         </Redactor>
 

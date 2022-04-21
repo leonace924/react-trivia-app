@@ -37,7 +37,7 @@ export const RadioButton = ({
         />
       </div>
       <View className="ml-3">
-        <Label htmlFor={id} className={cx({ 'text-rose-600': hasError })}>
+        <Label htmlFor={id} className={cx('text-lg font-semibold', { 'text-rose-600': hasError })}>
           {label}
         </Label>
       </View>

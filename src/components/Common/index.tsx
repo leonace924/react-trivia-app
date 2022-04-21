@@ -5,5 +5,4 @@ export * from './Text';
 export * from './Title';
 export * from './Paragraph';
 export * from './Loading';
-export * from './Button';
 export * from './Redactor';

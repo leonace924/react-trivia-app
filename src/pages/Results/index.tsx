@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Title, View } from 'components/Common';
 import { useScore } from 'hooks/useScore';
 import { Button } from 'components/Form';
+import { Title, View } from 'components/Common';
 import { ResultItem } from 'components/Pages/Results';
 
 const Results = () => {

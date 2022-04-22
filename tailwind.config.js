@@ -12,6 +12,9 @@ module.exports = {
         gray: '#E0E0E0',
         'dark-gray': '#696969',
       },
+      gridTemplateColumns: {
+        result: 'auto 1fr',
+      },
     },
   },
   plugins: [],

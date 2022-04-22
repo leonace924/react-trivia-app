@@ -9,8 +9,6 @@ const Results = () => {
   const [score, , resetScore] = useScore();
   const navigate = useNavigate();
 
-  console.log(score);
-
   const returnToHome = useCallback(() => {
     resetScore();
     navigate('/');

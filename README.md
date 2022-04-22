@@ -2,35 +2,30 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+Install & run the development server:
 
-### `npm start`
+```bash
+# clone
+git clone https://github.com/leonace924/react-trivia-app.git
+cd react-trivia-app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# install
+yarn install
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-### Possible fix
-
-If you get into this error when you run the `yarn run dev`, then you should install `cross-env` library globally.
-`'cross-env' is not recognized as an internal or external command,`
-
+# run
+yarn dev
 ```
-# install cross-env globally
-npm i --global cross-env
 
-```
+### Structure
+
+- `components/`: All `React` components to be rendered by `pages`.
+- `hooks/`: Global hooks (keep components-related hooks together, here is only for global hooks that are not part of a component).
+- `configs/`: Specific configurations. Don't store any `sensitive data` here.
+- `lib/`: Constants definitions, we can replace API url with environmental variable in `.env`.
+- `pages/`: Pages.
+- `redux/`: Redux (slices).
+- `routes/`: Whole app routes.
+- `styles/`: Global css.
+- `types/`: Typescript types.

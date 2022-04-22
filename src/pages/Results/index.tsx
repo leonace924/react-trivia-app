@@ -26,7 +26,7 @@ const Results = () => {
         You scored <br /> {`${correctScoreCount} / ${score.length}`}
       </Title>
 
-      <View className="grid justify-start gap-3 my-12 lg:gap-4 lg:my-20">
+      <View className="grid justify-start gap-3 my-12 lg:gap-4 lg:my-20 xl:max-w-5xl xl:mx-auto">
         {score.map((result, id) => (
           <ResultItem result={result} key={id} />
         ))}

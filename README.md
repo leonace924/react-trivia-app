@@ -1,6 +1,6 @@
-# React Trivia Quiz App using https://opentdb.com/ API.
+# React Trivia Quiz App
 
-This project was bootstrapped with React, TypeScript, Redux and Tailwind CSS.
+This project was bootstrapped with React, TypeScript, Redux and Tailwind CSS and use the https://opentdb.com/ API.
 
 ## Getting Started
 
